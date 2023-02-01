@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="flex-container generators">
+      <div class="flex-row">
+        <div class="flex-column flex-center">
+          <div class="flex-container generator generator--password">
+            <div class="flex-row">
+              <div class="flex-column">
+                <h1 class="generator__header">
+                  <span class="generator__header--accent"
+                    >Generate a<br
+                  /></span>
+                  random password
+                </h1>
+              </div>
+            </div>
+            <div class="flex-row">
+              <div class="flex-column">
+                <p class="generator__tagline">
+                  Never use an insecure password again. This was created as part of completing the Scrimba JavaScript course.
+                </p>
+              </div>
+            </div>
+            <div class="flex-row">
+              <div class="flex-column">
+                <div class="flex-row">
+                  <fieldset>
+                    <legend>
+                      <div class="tooltip">
+                        Quantity:
+                        <span class="tooltiptext tooltip-top"
+                          >How many passwords we will generate</span
+                        >
+                      </div>
+                    </legend>
+                    <label>
+                      <input
+                        class="form__password-quantity"
+                        type="number"
+                        value="4"
+                        onchange="renderPasswords()"
+                        required
+                      />
+                    </label>
+                  </fieldset>
+                </div>
+                <div class="flex-row">
+                  <fieldset>
+                    <legend>
+                      <div class="tooltip">
+                        Length:
+                        <span class="tooltiptext tooltip-top"
+                          >The length of the passwords generated</span
+                        >
+                      </div>
+                    </legend>
+                    <label>
+                      <input
+                        class="form__password-length"
+                        type="number"
+                        value="12"
+                        onchange="renderPasswords()"                        
+                        required
+                      />
+                    </label>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="flex-column">
+                <fieldset>
+                  <legend>Character Set:</legend>
+                  <ul class="generator--password__character-set">
+                    <li>
+                      <label
+                        ><input
+                          class="form__password-uppercase"
+                          type="checkbox"
+                          name="uppercase"
+                          checked
+                          onclick="renderPasswords()"
+                        />Uppercase
+                        <div class="tooltip">
+                          ?
+                          <span class="tooltiptext tooltip-top"
+                            >Include uppercase letters like A, B, or C</span
+                          >
+                        </div>
+                      </label>
+                    </li>
+                    <li>
+                      <label
+                        ><input
+                          class="form__password-lowercase"
+                          type="checkbox"
+                          name="uppercase"
+                          checked
+                          onclick="renderPasswords()"
+                        />Lowercase
+                        <div class="tooltip">
+                          ?
+                          <span class="tooltiptext tooltip-top"
+                            >Include lowercase letters like a, b, or c</span
+                          >
+                        </div>
+                      </label>
+                    </li>
+                    <li>
+                      <label
+                        ><input
+                          class="form__password-number"
+                          type="checkbox"
+                          name="uppercase"
+                          checked
+                          onclick="renderPasswords()"
+                        />Numbers
+                        <div class="tooltip">
+                          ?
+                          <span class="tooltiptext tooltip-top"
+                            >Include numbers like 2, 3, or 4</span
+                          >
+                        </div>
+                      </label>
+                    </li>
+                    <li>
+                      <label
+                        ><input
+                          class="form__password-symbol"
+                          type="checkbox"
+                          name="uppercase"
+                          checked
+                          onclick="renderPasswords()"
+                        />Symbols
+                        <div class="tooltip">
+                          ?
+                          <span class="tooltiptext tooltip-top"
+                            >Include symbols like @, #, or $</span
+                          >
+                        </div>
+                      </label>
+                    </li>
+                    <li>
+                      <label
+                        ><input
+                          class="form__password-whitespace"
+                          type="checkbox"
+                          name="whitespace"
+                          onclick="renderPasswords()"
+                        />Whitespace
+                        <div class="tooltip">
+                          ?
+                          <span class="tooltiptext tooltip-top"
+                            >Include space in the password. Note that space will
+                            not be used in the first or last position for
+                            usability reasons.</span
+                          >
+                        </div>
+                      </label>
+                    </li>
+                    <li>
+                      <label
+                        ><input
+                          class="form__password-easyToRead"
+                          type="checkbox"
+                          name="whitespace"
+                          onclick="renderPasswords()"
+                        />Easy to read
+                        <div class="tooltip">
+                          ?
+                          <span class="tooltiptext tooltip-top"
+                            >Avoid similar and ambiguous numbers, letters, and
+                            symbols such as 1, l, 0, or O</span
+                          >
+                        </div>
+                      </label>
+                    </li>
+                  </ul>
+                </fieldset>
+              </div>
+            </div>
+            <div class="flex-row">
+              <div class="flex-column">
+                <button
+                  class="button button--primary button--password"
+                  onclick="renderPasswords()"
+                >
+                  Generate new passwords
+                </button>
+              </div>
+            </div>
+            <div class="flex-row center">
+              <div class="flex-column">
+                <hr class="generator__hr" />
+              </div>
+            </div>
+            <div class="flex-row">
+              <div class="flex-overflow-fix flex-column">
+                <fieldset class="flex-overflow-fix generator__output generator--password__output">
+                  <legend>Click on a password to copy it</legend>
+                  <div class="flex-container flex-center generator__box-wrapper generator--password__box-wrapper">
+                    <!-- Password boxes added in javascript, they look like: -->
+                    <!-- <div class="generator__box>Password</div> -->
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
